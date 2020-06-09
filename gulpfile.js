@@ -70,6 +70,10 @@ function svg() {
 function styles() {
     return gulp.src('./src/scss/main.scss')
         .pipe(sass())
+        .pipe(autoprefixer ({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest(paths.styles.dest))
 }
 
